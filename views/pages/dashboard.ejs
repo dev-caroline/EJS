@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <%- include('../partials/navbar') %>
+        <h1>Dashboard</h1>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>S/N</th>
+                    <th>Name</th>
+                    <th>Population</th>
+                    <th>Landmark</th>
+                    <th>Landmass</th>
+                    <th>Picture</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let index=0; index < data.length; index++) { %>
+                    <tr>
+                        <td>
+                            <%= index+1%>
+                        </td>
+                        <td>
+                            <%= data[index].name %>
+                        </td>
+                        <td>
+                            <%= data[index].population %>
+                        </td>
+                        <td>
+                            <%= data[index].landmark %>
+                        </td>
+                        <td>
+                            <%= data[index].landmass %>
+                        </td>
+                        <td>
+                            <img src="<%= data[index].picture %>" alt="spybot" width="20">
+                        </td>
+                        <% } %>
+                    </tr>
+            </tbody>
+        </table>
+        <%- include('../partials/footer') %>
+</body>
+
+</html>
