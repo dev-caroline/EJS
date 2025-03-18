@@ -7,7 +7,16 @@
 </head>
 <body>
     <%- include('../partials/navbar') %>
-    <h1>Sign up</h1>
+    <div class="col-6 mx-auto bg-info rounded-3 p-4 mt-5 border border-dark border-3" style="height: 60vh;">
+        <h1 class="text-center mt-3">Create your account 👋</h1>
+        <input type="text" class="form-control mt-5" placeholder="First Name">
+        <input type="text" class="form-control mt-4" placeholder="Last Name">
+        <input type="email" class="form-control mt-4" placeholder="Email">
+        <input type="password" class="form-control mt-4" placeholder="Password">
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-warning mt-4 px-3 fw-bold">Sign up</button>
+        </div>
+    </div>
     <%- include('../partials/footer') %>
 </body>
 </html>
