@@ -1,7 +1,24 @@
 const express = require('express')
+const mongoose = require('mongoose')
+const users = require('./models/userModel')
 const app = express()
-
+require('dotenv').config()
 app.set('view engine', 'ejs')
+
+const URI = process.env.uri
+
+mongoose.connect(URI)
+.then(()=>{
+    console.log('mongodb connected');
+})
+.catch((err)=>{
+    console.log(err);
+})
+
+
+app.post('/store', (req,res)=>{
+    
+})
 
 
 app.get('/', (req, res)=>{
