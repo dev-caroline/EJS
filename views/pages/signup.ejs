@@ -7,15 +7,17 @@
 </head>
 <body>
     <%- include('../partials/navbar') %>
-    <div class="col-6 mx-auto bg-info rounded-3 p-4 mt-5 border border-dark border-3" style="height: 60vh;">
-        <h1 class="text-center mt-3">Create your account 👋</h1>
-        <input type="text" class="form-control mt-5" placeholder="First Name">
-        <input type="text" class="form-control mt-4" placeholder="Last Name">
-        <input type="email" class="form-control mt-4" placeholder="Email">
-        <input type="password" class="form-control mt-4" placeholder="Password">
-        <div class="d-flex justify-content-end">
-            <button class="btn btn-warning mt-4 px-3 fw-bold">Sign up</button>
-        </div>
+    <div class="col-6 mx-auto rounded-3 p-4 mt-5 border border-dark border-3" style="height: 60vh; background-color: maroon;">
+        <h1 class="text-center mt-3 text-light">Create your account 👋</h1>
+        <form action="/signup" method="post">
+            <input required autofocus type="text" class="form-control mt-5" placeholder="Name" id="name" name="name">
+            <input required type="email" class="form-control mt-4" placeholder="Email" id="email" name="email">
+            <input required type="number" class="form-control mt-4" placeholder="Age" id="age" name="age">
+            <input required type="password" class="form-control mt-4" placeholder="Password" id="password" name="password">
+            <div class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-warning mt-4 px-3 fw-bold">Sign up</button>
+            </div>
+        </form>
     </div>
     <%- include('../partials/footer') %>
 </body>
