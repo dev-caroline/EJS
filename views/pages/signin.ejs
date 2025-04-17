@@ -9,11 +9,13 @@
     <%- include('../partials/navbar') %>
     <div class="col-6 mx-auto rounded-3 p-4 mt-5 border border-dark border-3" style="height: 40vh; background-color: maroon;">
         <h1 class="text-center text-light mt-3">Welcome User 👋</h1>
-        <input type="email" class="form-control mt-5" placeholder="Email">
-        <input type="password" class="form-control mt-4" placeholder="Password">
-        <div class="d-flex justify-content-end">
-            <button class="btn btn-warning mt-4 px-3 fw-bold">Login</button>
-        </div>
+        <form action="/signin" method="post">
+            <input required type="email" class="form-control mt-5" placeholder="Email" name="email" id="email">
+            <input required type="password" class="form-control mt-4" placeholder="Password" name="password" id="password">
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-warning mt-4 px-3 fw-bold">Login</button>
+            </div>
+        </form>
     </div>
     <%- include('../partials/footer') %>
 </body>
