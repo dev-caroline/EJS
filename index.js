@@ -4,6 +4,9 @@ const users = require('./models/userModel')
 const bodyParser = require('body-parser')
 const bcrypt = require('bcryptjs')
 const Mailer = require('./controller/sendMail')
+const FileUpload = require('./controller/fileUpload')
+const testing = require('game-quests')
+const { isEmpty } = require('empty-value-checkers')
 const app = express()
 require('dotenv').config()
 app.set('view engine', 'ejs')
@@ -36,9 +39,16 @@ app.post('/signup', async (req, res) => {
 })
 
 
-app.get('/allusers', () => {
-    const data = users.find()
-    console.log(data);
+app.get('/allusers', async (req, res) => {
+    try {
+        const data = users.find()
+        console.log(data);
+        res.status(201).json({ status: 'success', message: data })
+    }
+    catch (err) {
+        console.log(err);
+        res.status(401).json({ message: err })
+    }
 
 })
 
@@ -85,6 +95,13 @@ app.get('/dashboard', (req, res) => {
 })
 
 app.get('/mail', Mailer)
+
+app.get('/upload', FileUpload)
+
+console.log(testing);
+
+console.log(isEmpty(''));
+
 
 app.listen(3010, () => {
     console.log('server is running');
